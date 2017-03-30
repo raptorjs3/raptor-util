@@ -21,7 +21,7 @@ function escapeXml(str) {
         return elTest.test(str) ? str.replace(elTestReplace, replaceChar) : str;
     }
 
-    return (str == null) ? '' : str.toString();
+    return (str == null) ? '' : escapeXml(str.toString());
 }
 
 function escapeXmlAttr(str) {
@@ -29,7 +29,7 @@ function escapeXmlAttr(str) {
         return attrTest.test(str) ? str.replace(attrReplace, replaceChar) : str;
     }
 
-    return (str == null) ? '' : str.toString();
+    return (str == null) ? '' : escapeXmlAttr(str.toString());
 }
 
 
